@@ -23,7 +23,7 @@
                         </li>
                     @else
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Usuarios</a>
+                            <a class="nav-link disabled" href="usuarios.index">Usuarios</a>
                         </li>
                     @endif
 
@@ -37,11 +37,12 @@
 
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Tramites</a>
+                        <a class="nav-link" href="{{ route('tramites.index') }}">Tramites</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Top</a>
+                        <a class="nav-link" href="{{ url('/top') }}">Top</a>
                     </li>
+
                 </ul>
             </div>
         </nav>

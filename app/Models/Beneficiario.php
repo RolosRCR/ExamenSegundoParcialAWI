@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Beneficiario extends Model
 {
-    protected $table = 'beneficiarios';
-    protected $primaryKey = 'id_beneficiario';
-    protected $fillable = ['nombre', 'servicio'];
-}
+    use HasFactory;
 
+    protected $primaryKey = 'id_beneficiario';
+    protected $fillable = ['nombre', 'numero_de_prestamos'];
+}

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use Illuminate\Support\Facades\Hash; // esta linea es la que me ayuda aencriptar ******<-----
+use Illuminate\Support\Facades\Hash; // esta linea es la que me ayuda aencriptar *******<-----
 
 class AuthController extends Controller
 {
@@ -13,38 +13,38 @@ class AuthController extends Controller
         return view('login');
     }
 
- public function login(Request $request)
-{
-    // Validar los datos de entrada
-    $request->validate([
-        'id_usuario' => 'required|integer',
-        'contrasena' => 'required|string',
-    ]);
+    public function login(Request $request)
+    {
+        // Validar los datos de entrada
+        $request->validate([
+            'id_usuario' => 'required|integer',
+            'contrasena' => 'required|string',
+        ]);
 
-    $usuario = \App\Models\Usuario::where('id_usuario', $request->id_usuario)->first();
+        $usuario = \App\Models\Usuario::where('id_usuario', $request->id_usuario)->first();
 
-    if ($usuario) {
+        if ($usuario) {
 
-        // Compruebo las credenciales
-        if (Hash::check($request->contrasena, $usuario->contrasena)) {
-            // contraseña es correcta
-            Auth::login($usuario);
-            session(['rol' => $usuario->rol]);
+            // Compruebo las credenciales
+            if (Hash::check($request->contrasena, $usuario->contrasena)) {
+                // contraseña es correcta
+                Auth::login($usuario);
+                session(['rol' => $usuario->rol]);
 
-            return redirect('/usuarios');
+                return redirect('/usuarios');
+            } else {
+                // Contraseña incorrecta
+                return redirect('/login')->withErrors([
+                    'contrasena' => 'Contraseña incorrecta.',
+                ]);
+            }
         } else {
-            // Contraseña incorrecta
+            // Usuario no encontrado
             return redirect('/login')->withErrors([
-                'contrasena' => 'Contraseña incorrecta.',
+                'id_usuario' => 'Usuario no encontrado.',
             ]);
         }
-    } else {
-        // Usuario no encontrado
-        return redirect('/login')->withErrors([
-            'id_usuario' => 'Usuario no encontrado.',
-        ]);
     }
-}
 
 }
 

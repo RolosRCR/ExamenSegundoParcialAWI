@@ -8,5 +8,9 @@ class Tramite extends Model
 {
     protected $table = 'tramites';
     protected $primaryKey = 'id_tramite';
-    protected $fillable = ['id_libro', 'id_beneficiario', 'fecha', 'tipo'];
+    public $timestamps = false; // Desactiva las marcas de tiempo
+
+    protected $fillable = [
+        'id_libro', 'id_beneficiario', 'fecha', 'tipo'
+    ];
 }
