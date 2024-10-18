@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <title>Login</title>
-</head>
-<body>
-    <div class="container">
+<h1>¿Estás seguro que quieres eliminar a {{ $usuario->nombre }}?</h1>
+<form action="{{ route('usuarios.eliminar', $usuario->id) }}" method="POST">
+    @csrf
+    @method('DELETE')
+    <button type="submit">Sí, eliminar</button>
+    <a href="{{ route('usuarios.index') }}">No, regresar</a>
+</form>
+
+<!--
+<div class="container">
         <div class="row justify-content-center align-items-center" style="height: 100vh;">
             <div class="col-md-6">
                 <div class="card">
@@ -15,11 +15,11 @@
                         <h4>Iniciar Sesión</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('login') }}" method="POST">
+                        <form action="{{ route('login.post') }}" method="POST">
                             @csrf
                             <div class="form-group">
-                                <label for="nombre">Nombre</label>
-                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                <label for="id_usuario">Clave</label>
+                                <input type="number" class="form-control" id="id_usuario" name="id_usuario" required>
                             </div>
                             <div class="form-group">
                                 <label for="contrasena">Contraseña</label>
@@ -32,8 +32,7 @@
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
-</html>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+-->

@@ -18,4 +18,11 @@ class Usuario extends Authenticatable
     {
         return 'id_usuario';
     }
+    public function confirmarEliminacion($id)
+    {
+        $usuario = Usuario::findOrFail($id);
+        return view('usuarios.confirmar-eliminacion', compact('usuario'));
+    }
+
+    
 }

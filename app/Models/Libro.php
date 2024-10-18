@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Libro extends Model
 {
+    public $timestamps = false;
     protected $table = 'libros';
     protected $primaryKey = 'id_libro';
-    protected $fillable = ['nombre', 'estado'];
+    protected $fillable = ['id_libro','nombre', 'estado'];
 }
 
