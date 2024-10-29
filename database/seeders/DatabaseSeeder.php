@@ -12,6 +12,8 @@ class DatabaseSeeder extends Seeder
     {
         $this->seedUsuarios();
         $this->seedLibros();
+        $this->seedTops();
+        $this->seedBeneficiarios();
     }
 
     private function seedUsuarios() 
@@ -50,26 +52,52 @@ class DatabaseSeeder extends Seeder
     private function seedLibros()
     {
         DB::table('libros')->insert([
-            ['nombre' => 'Cien Años de Soledad', 'estado' => 0],
-            ['nombre' => 'El Principito', 'estado' => 0],
-            ['nombre' => 'Don Quijote de la Mancha', 'estado' => 0],
-            ['nombre' => 'La Odisea', 'estado' => 0],
-            ['nombre' => 'Orgullo y Prejuicio', 'estado' => 0],
-            ['nombre' => '1984', 'estado' => 0],
-            ['nombre' => 'Moby Dick', 'estado' => 0],
-            ['nombre' => 'La Metamorfosis', 'estado' => 0],
-            ['nombre' => 'Crimen y Castigo', 'estado' => 0],
-            ['nombre' => 'El Gran Gatsby', 'estado' => 0],
-            ['nombre' => 'Fahrenheit 451', 'estado' => 0],
-            ['nombre' => 'El Retrato de Dorian Gray', 'estado' => 0],
-            ['nombre' => 'Jane Eyre', 'estado' => 0],
-            ['nombre' => 'Ulises', 'estado' => 0],
-            ['nombre' => 'Hamlet', 'estado' => 0],
-            ['nombre' => 'La Iliada', 'estado' => 0],
-            ['nombre' => 'Los Miserables', 'estado' => 0],
-            ['nombre' => 'Anna Karenina', 'estado' => 0],
-            ['nombre' => 'Cumbres Borrascosas', 'estado' => 0],
-            ['nombre' => 'Divina Comedia', 'estado' => 0],
+            ['nombre' => 'Cien Años de Soledad', 'estado' => 1],
+            ['nombre' => 'El Principito', 'estado' => 1],
+            ['nombre' => 'Don Quijote de la Mancha', 'estado' => 1],
+            ['nombre' => 'La Odisea', 'estado' => 1],
+            ['nombre' => 'Orgullo y Prejuicio', 'estado' => 1],
+            ['nombre' => '1984', 'estado' => 1],
+            ['nombre' => 'Moby Dick', 'estado' => 1],
+            ['nombre' => 'La Metamorfosis', 'estado' => 1],
+            ['nombre' => 'Crimen y Castigo', 'estado' => 1],
+            ['nombre' => 'El Gran Gatsby', 'estado' => 1],
+            ['nombre' => 'Fahrenheit 451', 'estado' => 1],
+            ['nombre' => 'El Retrato de Dorian Gray', 'estado' => 1],
+            ['nombre' => 'Jane Eyre', 'estado' => 1],
+            ['nombre' => 'Ulises', 'estado' => 1],
+            ['nombre' => 'Hamlet', 'estado' => 1],
+            ['nombre' => 'La Iliada', 'estado' => 1],
+            ['nombre' => 'Los Miserables', 'estado' => 1],
+            ['nombre' => 'Anna Karenina', 'estado' => 1],
+            ['nombre' => 'Cumbres Borrascosas', 'estado' => 1],
+            ['nombre' => 'Divina Comedia', 'estado' => 1],
+        ]);
+    }
+    private function seedTops()
+    {
+        DB::table('tops')->insert([
+            ['titulo' => 'Cien Años de Soledad', 'contador' => 8],
+            ['titulo' => 'El Principito', 'contador' => 8],
+            ['titulo' => 'Don Quijote de la Mancha', 'contador' => 7],
+            ['titulo' => 'La Odisea', 'contador' => 6],
+            ['titulo' => 'Orgullo y Prejuicio', 'contador' => 5],
+            ['titulo' => '1984', 'contador' => 4],
+            ['titulo' => 'Moby Dick', 'contador' => 2],
+            ['titulo' => 'El Gran Gatsby', 'contador' => 0],
+        ]);
+    }
+    private function seedBeneficiarios()
+    {
+        DB::table('tops')->insert([
+            ['titulo' => 'Cien Años de Soledad', 'contador' => 8],
+            ['titulo' => 'El Principito', 'contador' => 8],
+            ['titulo' => 'Don Quijote de la Mancha', 'contador' => 7],
+            ['titulo' => 'La Odisea', 'contador' => 6],
+            ['titulo' => 'Orgullo y Prejuicio', 'contador' => 5],
+            ['titulo' => '1984', 'contador' => 4],
+            ['titulo' => 'Moby Dick', 'contador' => 2],
+            ['titulo' => 'El Gran Gatsby', 'contador' => 0],
         ]);
     }
 }

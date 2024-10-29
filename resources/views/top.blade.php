@@ -44,7 +44,7 @@
                 @foreach($topLibros as $index => $libro)
                 <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ $libro->nombre }}</td>
+                    <td>{{ $libro->titulo }}</td>
                     <td>{{ $libro->contador }}</td>
                 </tr>
                 @endforeach
