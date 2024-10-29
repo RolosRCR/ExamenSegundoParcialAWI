@@ -33,7 +33,9 @@ class AuthController extends Controller
                 // Imprimir en consola
                 error_log('Rol del usuario: ' . $usuario->rol);
                 //sleep(10);
-                return redirect('/usuarios');
+                if(session('rol') == 1){return redirect('/usuarios');}
+                else{return redirect('/libros');}
+                
             } else {
                 // Contraseña incorrecta
                 return redirect('/login')->withErrors(['mensajeError' => 'Contraseña incorrecta.']);

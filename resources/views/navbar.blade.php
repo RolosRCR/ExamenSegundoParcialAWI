@@ -7,6 +7,7 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <title>Login</title>
 </head>
+
 <body>
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,13 +19,15 @@
                     @if(session('rol') == 1)
                         <!-- Solo admin tiene acceso usuario -->
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Usuarios <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{ route('usuarios.index') }}">Usuarios <span
+                                    class="sr-only">(current)</span></a>
                         </li>
                     @else
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="usuarios.index">Usuarios</a>
+                        <li class="nav-item disabled">
+                            <a class="nav-link disabled" href="#">Usuarios</a>
                         </li>
                     @endif
+
 
 
 
