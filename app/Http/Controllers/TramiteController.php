@@ -15,7 +15,9 @@ class TramiteController extends Controller
         // Obtener todos los trámites
         $tramites = Tramite::all();
         $libros = Libro::where('estado', 1)->get(); // Libros disponibles
-        return view('tramites', compact('tramites', 'libros'));
+        $beneficiarios =Beneficiario::all(); // Beneficiarios
+        
+        return view('tramites', compact('tramites', 'libros','beneficiarios'));
     }
 
     public function guardar(Request $request)
