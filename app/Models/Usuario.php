@@ -11,9 +11,9 @@ class Usuario extends Authenticatable
 
     protected $table = 'usuarios';
     protected $primaryKey = 'id_usuario';
-    protected $fillable = ['contrasena', 'nombre', 'rol'];
+    protected $fillable = ['id_usuario', 'contrasena', 'nombre', 'rol']; 
 
-    // La autenticación es 'id_usuario'
+    // La autenticación es con 'id_usuario'
     public function getAuthIdentifierName()
     {
         return 'id_usuario';

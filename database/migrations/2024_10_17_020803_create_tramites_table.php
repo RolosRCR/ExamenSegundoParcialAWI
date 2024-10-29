@@ -22,12 +22,18 @@ class CreateTramitesTable extends Migration
     }
 
     public function down()
-    {
-        Schema::table('tramites', function (Blueprint $table) {
-            // Eliminar claves foráneas primero
+{
+    // Solo intenta eliminar la clave foránea si existe
+    Schema::table('tramites', function (Blueprint $table) {
+        if (Schema::hasColumn('tramites', 'id_libro')) {
             $table->dropForeign(['id_libro']);
+        }
+        if (Schema::hasColumn('tramites', 'id_beneficiario')) {
             $table->dropForeign(['id_beneficiario']);
-        });
-        Schema::dropIfExists('tramites');
-    }
+        }
+    });
+
+    Schema::dropIfExists('tramites');
+}
+
 }

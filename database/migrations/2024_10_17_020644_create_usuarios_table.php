@@ -10,8 +10,8 @@ class CreateUsuariosTable extends Migration
     {
         Schema::create('usuarios', function (Blueprint $table) {
             $table->increments('id_usuario');
-            $table->string('contrasena');
             $table->string('nombre');
+            $table->string('contrasena');            
             $table->unsignedInteger('rol'); // 1: Administrador, 2: Bibliotecario
         });
     }

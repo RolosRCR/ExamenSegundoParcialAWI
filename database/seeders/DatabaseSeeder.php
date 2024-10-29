@@ -23,26 +23,26 @@ class DatabaseSeeder extends Seeder
                 'contrasena' => Hash::make('admin'),
                 'rol' => 1
             ],
-            [
-                'nombre' => 'Esmeralda',
-                'contrasena' => Hash::make('123456'),
-                'rol' => 2
-            ],
-            [
-                'nombre' => 'Brayan',
-                'contrasena' => Hash::make('123456'),
-                'rol' => 2
-            ],
-            [
-                'nombre' => 'Edgar',
-                'contrasena' => Hash::make('123456'),
-                'rol' => 2
-            ],
-            [
-                'nombre' => 'Armando',
-                'contrasena' => Hash::make('123456'),
-                'rol' => 2
-            ]
+            // [
+            //     'nombre' => 'Esmeralda',
+            //     'contrasena' => Hash::make('123456'),
+            //     'rol' => 2
+            // ],
+            // [
+            //     'nombre' => 'Brayan',
+            //     'contrasena' => Hash::make('123456'),
+            //     'rol' => 2
+            // ],
+            // [
+            //     'nombre' => 'Edgar',
+            //     'contrasena' => Hash::make('123456'),
+            //     'rol' => 2
+            // ],
+            // [
+            //     'nombre' => 'Armando',
+            //     'contrasena' => Hash::make('123456'),
+            //     'rol' => 2
+            // ]
         ]);
     }
 
