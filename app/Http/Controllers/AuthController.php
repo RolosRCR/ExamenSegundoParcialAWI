@@ -24,7 +24,6 @@ class AuthController extends Controller
         $usuario = \App\Models\Usuario::where('id_usuario', $request->id_usuario)->first();
 
         if ($usuario) {
-
             // Compruebo las credenciales
             if (Hash::check($request->contrasena, $usuario->contrasena)) {
                 // contraseña es correcta
@@ -40,9 +39,7 @@ class AuthController extends Controller
             }
         } else {
             // Usuario no encontrado
-            return redirect('/login')->withErrors([
-                'id_usuario' => 'Usuario no encontrado.',
-            ]);
+            return redirect('/usuarios');
         }
     }
 
