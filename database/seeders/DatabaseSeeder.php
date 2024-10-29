@@ -14,37 +14,38 @@ class DatabaseSeeder extends Seeder
         $this->seedLibros();
     }
 
-    private function seedUsuarios()
-    {
-        DB::table('usuarios')->insert([
-            [
-                'id_usuario' => '286847',
-                'nombre' => 'Carlos',
-                'contrasena' => Hash::make('admin'),
-                'rol' => 1
-            ],
-            // [
-            //     'nombre' => 'Esmeralda',
-            //     'contrasena' => Hash::make('123456'),
-            //     'rol' => 2
-            // ],
-            // [
-            //     'nombre' => 'Brayan',
-            //     'contrasena' => Hash::make('123456'),
-            //     'rol' => 2
-            // ],
-            // [
-            //     'nombre' => 'Edgar',
-            //     'contrasena' => Hash::make('123456'),
-            //     'rol' => 2
-            // ],
-            // [
-            //     'nombre' => 'Armando',
-            //     'contrasena' => Hash::make('123456'),
-            //     'rol' => 2
-            // ]
-        ]);
-    }
+    private function seedUsuarios() 
+{
+    DB::table('usuarios')->insert([
+        [
+            'nombre' => 'Carlos',
+            'contrasena' => Hash::make('admin'),
+           // 'id_usuario' => '286847',
+            'rol' => 1
+        ],
+        [
+            'nombre' => 'Esmeralda',
+            'contrasena' => Hash::make('123456'),
+            'rol' => 2
+        ],
+        [
+            'nombre' => 'Brayan',
+            'contrasena' => Hash::make('123456'),
+            'rol' => 2
+        ],
+        [
+            'nombre' => 'Edgar',
+            'contrasena' => Hash::make('123456'),
+            'rol' => 2
+        ],
+        [
+            'nombre' => 'Armando',
+            'contrasena' => Hash::make('123456'),
+            'rol' => 2
+        ]
+    ]);
+}
+
 
     private function seedLibros()
     {
