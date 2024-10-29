@@ -30,6 +30,9 @@ class AuthController extends Controller
                 Auth::login($usuario);
                 session(['rol' => $usuario->rol]);
 
+                // Imprimir en consola
+                error_log('Rol del usuario: ' . $usuario->rol);
+                //sleep(10);
                 return redirect('/usuarios');
             } else {
                 // Contraseña incorrecta
