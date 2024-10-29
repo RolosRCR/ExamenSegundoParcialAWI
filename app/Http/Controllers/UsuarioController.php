@@ -9,13 +9,17 @@ use Illuminate\Support\Facades\Hash;
 class UsuarioController extends Controller
 {
     public function index()
-    {
-        // Obtener todos los usuarios
-        $usuarios = Usuario::all(); 
+{
+    // Obtener todos los usuarios
+    $usuarios = Usuario::all();
+    
+    // Obtener todos los beneficiarios
+    //$beneficiarios = Beneficiario::all();
+    
+    // Pasar ambos conjuntos de datos a la vista
+    return view('usuarios', compact('usuarios'));
+}
 
-        // compact segun investigue hace que los usuarios puedan ser mandados a mi vista correctamente
-        return view('usuarios', compact('usuarios')); 
-    }
 
     public function guardar(Request $request)
     {

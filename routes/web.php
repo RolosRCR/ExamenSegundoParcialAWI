@@ -17,7 +17,7 @@ Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 // Ruta para procesar el form de inicio de sesion
 Route::post('/login', [AuthController::class, 'login'])->name('login.post');
 
-// Ruta para mostrar el formulario de usuarios
+//Ruta para mostrar el formulario de usuarios
 Route::get('/usuarios', [UsuarioController::class, 'index'])->name('usuarios.index');
 // Ruta para validar el registro antes de ser mandado
 Route::get('/usuarios/create', [UsuarioController::class, 'create'])->name('usuarios.create');
@@ -53,8 +53,10 @@ Route::delete('/beneficiarios/{id}', [BeneficiarioController::class, 'eliminar']
 
 
 
-Route::get('/usuarios', [BeneficiarioController::class, 'index']);
+//Route::get('/usuarios', [BeneficiarioController::class, 'index']);
 
 
 
 Route::get('/top', [TopController::class, 'showTop']);
+
+
