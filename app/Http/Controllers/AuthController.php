@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
-use Illuminate\Support\Facades\Hash; // esta linea es la que me ayuda aencriptar *******<-----
+use Illuminate\Support\Facades\Hash; // Esta línea es la que me ayuda a encriptar
 
 class AuthController extends Controller
 {
@@ -26,22 +26,18 @@ class AuthController extends Controller
         if ($usuario) {
             // Compruebo las credenciales
             if (Hash::check($request->contrasena, $usuario->contrasena)) {
-                // contraseña es correcta
+                // Contraseña es correcta
                 Auth::login($usuario);
                 session(['rol' => $usuario->rol]);
 
                 return redirect('/usuarios');
             } else {
                 // Contraseña incorrecta
-                return redirect('/login')->withErrors([
-                    'contrasena' => 'Contraseña incorrecta.',
-                ]);
+                return redirect('/login')->withErrors(['mensajeError' => 'Contraseña incorrecta.']);
             }
         } else {
             // Usuario no encontrado
-            return redirect('/usuarios');
+            return redirect('/login')->withErrors(['mensajeError' => 'Usuario no encontrado.']);
         }
     }
-
 }
-
