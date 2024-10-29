@@ -89,15 +89,15 @@ class DatabaseSeeder extends Seeder
     }
     private function seedBeneficiarios()
     {
-        DB::table('tops')->insert([
-            ['titulo' => 'Cien Años de Soledad', 'contador' => 8],
-            ['titulo' => 'El Principito', 'contador' => 8],
-            ['titulo' => 'Don Quijote de la Mancha', 'contador' => 7],
-            ['titulo' => 'La Odisea', 'contador' => 6],
-            ['titulo' => 'Orgullo y Prejuicio', 'contador' => 5],
-            ['titulo' => '1984', 'contador' => 4],
-            ['titulo' => 'Moby Dick', 'contador' => 2],
-            ['titulo' => 'El Gran Gatsby', 'contador' => 0],
+        DB::table('beneficiarios')->insert([
+            ['nombre' => 'Raul Garcia Escobedo', 'servicio' => 18],
+            ['nombre' => 'Jimena Saldana Ramirez','servicio' => 15],
+            ['nombre' => 'Chavo Octavo', 'servicio' => 10],
+            ['nombre' => 'Francsico GAllegos Lorenso', 'servicio' => 6],
+            ['nombre' => 'Victoria Ramirez Smith','servicio' => 5],
+            ['nombre' => 'Palindromo Manuel Garcia','servicio' => 4],
+            ['nombre' => 'Jose Maria Morelos','servicio' => 2],
+            ['nombre' => 'Braulio Federico Wilkerson','servicio' => 0],
         ]);
     }
 }
